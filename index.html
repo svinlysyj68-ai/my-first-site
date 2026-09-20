@@ -37,6 +37,22 @@
     <p>Тамик жирный таракан ест собаку</p>
     <img src="https://i.pinimg.com/736x/a4/48/95/a448952416346775683d7092465213af.jpg" alt="Моя картинка" style="width: 300px; border-radius: 12px; margin: 20px;">
     <br><br>
-    <button class="my-btn" onclick="alert('Запущена баллистичекая ракета в дом Елбакиева ✅')">Нажми на меня</button>
-</body>
+        <!-- Кнопка теперь вызывает функцию startSiren -->
+    <button class="my-btn" onclick="startSiren()">Нажми на меня</button>
+    <script>
+        // Код берет длинное имя файла, который ты загрузил на GitHub
+        const sirenSound = new Audio('the-sound-of-a-flying-rocket.mp3');
+        sirenSound.loop = true; // Звук будет повторяться
+
+        function startSiren() {
+            // Запускаем звук летящей ракеты
+            sirenSound.play().catch(function(error) {
+                console.log("Браузер заблокировал звук: ", error);
+            });
+            
+            // Твое фирменное уведомление с галочкой
+            alert('Запущена баллистическая ракета в дом Елбакиева ✅');
+        }
+    </script>
+
 </html>
